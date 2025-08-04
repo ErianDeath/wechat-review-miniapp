@@ -1,0 +1,25 @@
+@import "../common.wxss";
+.container { padding: 40rpx; }
+.menu-card {
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.menu-card:active {
+    transform: scale(0.98);
+}
+.menu-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #374151;
+}
+.menu-arrow {
+  font-size: 36rpx;
+  color: #9ca3af;
+}

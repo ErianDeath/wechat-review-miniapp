@@ -1,0 +1,20 @@
+.container { padding: 24rpx; background-color: #f3f4f6; min-height: 100vh; box-sizing: border-box; }
+.project-card { background-color: #fff; border-radius: 24rpx; padding: 32rpx; margin-bottom: 24rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16rpx; }
+.project-title { font-size: 36rpx; font-weight: bold; color: #1f2937; flex: 1; margin-right: 20rpx; }
+.tag-status { padding: 6rpx 16rpx; font-size: 22rpx; font-weight: 500; border-radius: 999px; flex-shrink: 0; }
+.tag-status.pending { background-color: #eff6ff; color: #3b82f6; }
+.tag-status.completed { background-color: #ecfdf5; color: #16a34a; }
+.project-owner { font-size: 28rpx; color: #6b7280; margin-bottom: 24rpx; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 24rpx; border-top: 1px solid #f3f4f6; font-size: 24rpx; }
+.creation-time { color: #9ca3af; }
+.tags-wrapper { display: flex; gap: 16rpx; }
+.tag-creator, .tag-participant, .tag-user-status { padding: 6rpx 16rpx; border-radius: 999px; font-weight: 500; }
+.tag-creator { background-color: #fefce8; color: #ca8a04; }
+.tag-participant { background-color: #f0fdf4; color: #16a34a; }
+.tag-user-status.pending { background-color: #fffbeb; color: #f59e0b; }
+.tag-user-status.completed { background-color: #f0fdf4; color: #16a34a; }
+.empty-state { text-align: center; padding-top: 200rpx; color: #9ca3af; }
+.empty-icon { width: 200rpx; margin-bottom: 20rpx; opacity: 0.7; }
+.empty-text { font-size: 32rpx; margin-bottom: 16rpx; }
+.empty-tip { font-size: 26rpx; }

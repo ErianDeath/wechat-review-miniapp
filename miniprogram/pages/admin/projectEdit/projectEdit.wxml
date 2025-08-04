@@ -1,0 +1,11 @@
+<view class="container form-container">
+    <view class="form-group">
+        <view class="form-label">项目名称</view>
+        <input class="form-input" value="{{project.projectName}}" data-field="projectName" bindinput="onInputChange" placeholder="请输入项目名称" />
+    </view>
+    <view class="form-group">
+        <view class="form-label">项目描述</view>
+        <textarea class="form-textarea" value="{{project.description}}" data-field="description" bindinput="onInputChange" placeholder="请输入项目详细描述" />
+    </view>
+    <button class="save-btn" bind:tap="handleSave">保存</button>
+</view>

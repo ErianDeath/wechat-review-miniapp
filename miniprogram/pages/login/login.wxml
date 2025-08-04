@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="avatar-wrapper">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="title">欢迎使用成果评审</view>
+  <view class="subtitle">请先登录以继续</view>
+  <!-- 关键改动：按钮不再使用 open-type，而是绑定一个普通的 tap 事件 -->
+  <button class="login-btn" bind:tap="handleWxLogin">微信授权登录</button>
+
+  <!-- 输入姓名弹窗 -->
+  <view class="modal-mask" wx:if="{{showNameModal}}">
+    <view class="modal-content">
+      <view class="modal-title">请输入您的真实姓名</view>
+      <input class="modal-input" placeholder="姓名将用于评审记录" value="{{realName}}" bindinput="onNameInput"/>
+      <view class="modal-actions">
+        <button class="action-btn decline" bind:tap="onDecline">拒绝授权</button>
+        <button class="action-btn confirm" bind:tap="onConfirmName">确认授权</button>
+      </view>
+    </view>
+  </view>
+</view>

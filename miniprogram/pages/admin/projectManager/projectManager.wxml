@@ -1,0 +1,15 @@
+<view class="container">
+    <view wx:if="{{projects.length === 0}}" class="empty-state">
+        <view>暂无项目</view>
+    </view>
+    <view wx:for="{{projects}}" wx:key="_id" class="item-card">
+        <view class="item-content">
+            <view class="item-title">{{item.projectName}}</view>
+        </view>
+        <view class="item-actions">
+            <button class="action-btn" size="mini" bind:tap="goToEdit" data-id="{{item._id}}">编辑</button>
+            <button class="action-btn warn" size="mini" bind:tap="handleDelete" data-id="{{item._id}}">删除</button>
+        </view>
+    </view>
+    <button class="add-btn" bind:tap="goToAdd">新增项目</button>
+</view>

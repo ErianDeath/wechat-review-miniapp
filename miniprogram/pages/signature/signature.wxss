@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+}
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1f2937;
+}
+.tip {
+  font-size: 28rpx;
+  color: #6b7280;
+  margin-top: 16rpx;
+}
+.signature-canvas {
+  width: 100%;
+  height: 800rpx; /* 给予充足的签名空间 */
+  border: 2rpx dashed #d1d5db;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+}
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+  gap: 24rpx;
+}
+.btn {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: white;
+  border-radius: 16rpx;
+}
+.btn.clear {
+  background-color: #ef4444; /* red-500 */
+}
+.btn.submit {
+  background-color: #10b981; /* emerald-500 */
+}

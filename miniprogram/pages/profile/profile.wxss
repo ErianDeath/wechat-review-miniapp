@@ -1,0 +1,33 @@
+/* pages/profile/profile.wxss */
+.container { padding: 32rpx; background-color: #f3f4f6; min-height: 100vh; box-sizing: border-box; }
+.profile-card { background: #fff; border-radius: 24rpx; padding: 40rpx; text-align: center; margin-bottom: 32rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05); }
+.avatar-wrapper { padding: 0; margin: 0 auto 16rpx; width: 180rpx; height: 180rpx; border-radius: 50%; display: block; box-shadow: 0 8rpx 16rpx rgba(0,0,0,0.1); }
+.avatar-wrapper::after { border: none; }
+.avatar { width: 50%; height: 100%; border-radius: 50%; object-fit: cover; }
+.avatar-edit-tip { font-size: 24rpx; color: #9ca3af; margin-top: 16rpx; }
+
+.info-item { display: flex; align-items: center; padding: 32rpx 0; border-bottom: 1px solid #f3f4f6; }
+.info-item:last-child { border-bottom: none; }
+.info-label { font-size: 30rpx; color: #6b7280; text-align: left; width: 180rpx; }
+.info-value { flex: 1; font-size: 30rpx; color: #1f2937; text-align: right; }
+.info-value[type="nickname"] { min-height: auto; } /* 修复 input 默认高度问题 */
+.arrow { font-size: 32rpx; color: #d1d5db; margin-left: 16rpx; }
+
+.projects-card { background: #fff; border-radius: 24rpx; padding: 40rpx; margin-bottom: 32rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05); }
+.card-title { font-size: 32rpx; font-weight: bold; color: #1f2937; margin-bottom: 16rpx; }
+.empty-tip { font-size: 28rpx; color: #9ca3af; text-align: center; padding: 40rpx 0; }
+.project-item { display: flex; justify-content: space-between; align-items: center; padding: 24rpx 0; border-bottom: 1px solid #f3f4f6; }
+.project-item:last-child { border-bottom: none; }
+.project-name { font-size: 30rpx; color: #374151; }
+
+.logout-btn { background-color: #ef4444; color: white; font-weight: bold; margin-top: 40rpx; }
+
+/* 弹窗样式 */
+.modal-mask { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { width: 80%; background-color: white; border-radius: 24rpx; padding: 48rpx; box-sizing: border-box; }
+.modal-title { font-size: 36rpx; font-weight: bold; text-align: center; margin-bottom: 40rpx; }
+.modal-input { border: 1px solid #e5e7eb; border-radius: 16rpx; padding: 20rpx; font-size: 28rpx; margin-bottom: 48rpx; }
+.modal-actions { display: flex; justify-content: space-between; gap: 24rpx; }
+.action-btn { flex: 1; font-size: 28rpx; }
+.action-btn.decline { background-color: #f3f4f6; color: #4b5563; }
+.action-btn.confirm { background-color: #10b981; color: white; }

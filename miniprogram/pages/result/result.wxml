@@ -1,0 +1,37 @@
+<!-- result.wxml -->
+<view class="container">
+  <view wx:if="{{scoreData._id}}" class="card">
+    <view class="header">
+      <view class="header-title">评审结果详情</view>
+    </view>
+
+    <view class="result-list">
+      <view wx:for="{{scoreData.scores}}" wx:key="name" class="result-item">
+        <view class="result-item-name">{{item.name}}</view>
+        <view class="result-item-score">{{item.score}} 分</view>
+      </view>
+    </view>
+
+    <view class="total-score-wrapper">
+      <view class="total-score-label">最终总分:</view>
+      <view class="total-score-value">{{scoreData.totalScore}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">综合评语:</view>
+      <view class="comment-box">
+        {{scoreData.comments || '无'}}
+      </view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">评委签名:</view>
+      <image src="{{scoreData.signatureFileID}}" class="signature-image" mode="aspectFit"/>
+    </view>
+  </view>
+  
+  <view wx:else class="empty-state">
+    <image class="empty-icon" src="/images/empty.svg" mode="widthFix"></image>
+    <view class="empty-text">暂无评审结果</view>
+  </view>
+</view>

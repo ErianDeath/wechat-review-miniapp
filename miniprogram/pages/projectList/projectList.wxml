@@ -1,0 +1,27 @@
+<view class="container">
+  <view wx:if="{{projects.length === 0 && !isLoading}}" class="empty-state">
+    <image class="empty-icon" src="/images/empty.png" mode="widthFix"></image>
+    <view class="empty-text">暂无相关项目</view>
+    <view class="empty-tip">您可以点击下方“新增项目”来创建，或通过他人分享加入项目</view>
+  </view>
+
+  <view wx:for="{{projects}}" wx:key="_id" class="project-card" bind:tap="goToScoring" data-id="{{item._id}}">
+    <view class="card-header">
+      <view class="project-title">{{item.projectName}}</view>
+      <!-- 项目整体状态 -->
+      <view class="tag-status {{item.status}}">{{item.status === 'completed' ? '已结束' : '进行中'}}</view>
+    </view>
+    <view class="project-owner">负责人: {{item.owner || '未指定'}}</view>
+    <view class="card-footer">
+      <view class="creation-time">创建于: {{item.formattedTime}}</view>
+      <!-- 关键改动：同时显示两种状态 -->
+      <view class="tags-wrapper">
+        <view wx:if="{{item.creatorId === openid}}" class="tag-creator">我创建的</view>
+        <view wx:else class="tag-participant">我参与的</view>
+        <view class="tag-user-status {{item.currentUserScored ? 'completed' : 'pending'}}">
+          {{item.currentUserScored ? '我已评分' : '待我评分'}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

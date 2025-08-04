@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/projectList/projectList",
+    "pages/addProject/addProject",
+    "pages/profile/profile",
+    "pages/scoring/scoring",
+    "pages/signature/signature",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundColor": "#f3f4f6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4f46e5",
+    "navigationBarTitleText": "成果评审",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6b7280",
+    "selectedColor": "#4f46e5",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/projectList/projectList",
+        "text": "项目列表"
+      },
+      {
+        "pagePath": "pages/addProject/addProject",
+        "text": "新增项目"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

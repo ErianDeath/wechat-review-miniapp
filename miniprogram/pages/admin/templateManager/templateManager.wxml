@@ -1,0 +1,17 @@
+<view class="container">
+    <view wx:if="{{templates.length === 0}}" class="empty-state">
+        <view>暂无评分标准模板</view>
+    </view>
+    <view wx:for="{{templates}}" wx:key="_id" class="item-card">
+        <view class="item-content">
+            <view class="item-title">{{item.templateName}}</view>
+            <view wx:if="{{item.isActive}}" class="tag-active">当前使用</view>
+        </view>
+        <view class="item-actions">
+            <button wx:if="{{!item.isActive}}" class="action-btn" size="mini" type="primary" bind:tap="handleSetActive" data-id="{{item._id}}">设为当前</button>
+            <button class="action-btn" size="mini" bind:tap="goToEdit" data-id="{{item._id}}">编辑</button>
+            <button wx:if="{{!item.isActive}}" class="action-btn warn" size="mini" bind:tap="handleDelete" data-id="{{item._id}}">删除</button>
+        </view>
+    </view>
+    <button class="add-btn" bind:tap="goToAdd">新增标准模板</button>
+</view>

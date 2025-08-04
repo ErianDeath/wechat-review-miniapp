@@ -1,0 +1,19 @@
+<view class="container form-container">
+    <view class="form-group">
+        <view class="form-label">模板名称</view>
+        <input class="form-input" value="{{template.templateName}}" data-field="templateName" bindinput="onInputChange" placeholder="请输入模板名称" />
+    </view>
+    
+    <view class="form-group">
+        <view class="form-label">评分标准细则</view>
+        <view wx:for="{{template.criteria}}" wx:for-item="criterion" wx:key="index" class="criterion-card">
+             <input class="form-input sub-input" value="{{criterion.name}}" placeholder="标准名称 (如: 创新性)" bindinput="onCriterionChange" data-index="{{index}}" data-field="name"/>
+             <input class="form-input sub-input" type="number" value="{{criterion.maxScore}}" placeholder="最高分 (如: 30)" bindinput="onCriterionChange" data-index="{{index}}" data-field="maxScore"/>
+             <textarea class="form-textarea sub-textarea" value="{{criterion.description}}" placeholder="评分说明" bindinput="onCriterionChange" data-index="{{index}}" data-field="description"/>
+             <button class="delete-criterion-btn" size="mini" bindtap="removeCriterion" data-index="{{index}}">删除此项</button>
+        </view>
+        <button class="add-criterion-btn" bindtap="addCriterion">+ 添加评分项</button>
+    </view>
+
+    <button class="save-btn" bind:tap="handleSave">保存模板</button>
+</view>

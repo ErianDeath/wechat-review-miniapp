@@ -1,0 +1,85 @@
+<view class="container">
+  <view hidden="{{!project}}">
+    <!-- 项目信息卡片 -->
+    <view class="card project-info-card">
+      <view class="project-status-badge {{project.status}}">{{project.status === 'completed' ? '项目已结束' : '评审进行中'}}</view>
+      <view class="project-title">{{project.projectName}}</view>
+      <view class="project-owner">负责人: {{project.owner || '未指定'}}</view>
+      <view class="project-desc">{{project.description || '暂无描述'}}</view>
+    </view>
+
+    <!-- (创建者视图) 评审进度模块 -->
+    <view wx:if="{{isCreator}}" class="card creator-dashboard">
+      <view class="card-title">评审进度</view>
+      <view class="participants-list">
+        <view wx:for="{{participants}}" wx:key="userId" class="participant-item">
+          <image class="avatar" src="{{item.avatarUrl}}"></image>
+          <view class="participant-name">{{item.realName}}</view>
+          <view class="tag-status {{item.status}}">{{item.status === 'completed' ? '已完成' : '待评分'}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 打分模块卡片 -->
+    <view class="card scoring-card">
+      <view class="card-title">请为以下各项评分</view>
+      <view class="criteria-list">
+        <!-- 关键修复：将 wx:key 从 "name" 改为 "index" -->
+        <view wx:for="{{project.criteria}}" wx:key="index" class="criterion-item">
+          <view class="criterion-header">
+            <view class="criterion-name">{{index + 1}}. {{item.name}}</view>
+            <view class="score-input-wrapper">
+              <input type="number" value="{{scores[index].score}}" bindinput="handleScoreInput" data-index="{{index}}" class="score-input" disabled="{{hasSubmitted}}" />
+              <view class="max-score">/ {{item.maxScore}}分</view>
+            </view>
+          </view>
+          <view class="criterion-desc">{{item.description}}</view>
+          <slider class="score-slider" min="0" max="{{item.maxScore}}" value="{{scores[index].score}}" bindchange="handleSliderChange" data-index="{{index}}" activeColor="#4f46e5" backgroundColor="#e5e7eb" block-color="#4f46e5" block-size="22" disabled="{{hasSubmitted}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评语与签名卡片 -->
+  <view hidden="{{!project}}">
+    <view class="card comment-signature-card">
+      <view class="form-group">
+        <view class="form-label">综合评语</view>
+        <textarea class="form-textarea" value="{{comments}}" bindinput="onCommentsInput" placeholder="请输入您的综合评价和建议..." disabled="{{hasSubmitted}}" />
+      </view>
+      <view class="form-group">
+        <view class="signature-header">
+          <view class="form-label">手写签名</view>
+          <button wx:if="{{signatureImagePath && !hasSubmitted}}" size="mini" class="clear-btn" bind:tap="clearSignature">清除</button>
+        </view>
+        <view class="signature-display-area" bind:tap="{{hasSubmitted ? '' : 'goToSignaturePage'}}">
+          <image wx:if="{{signatureImagePath}}" src="{{signatureImagePath}}" mode="aspectFit" class="signature-image"></image>
+          <view wx:else class="signature-placeholder">
+            <image src="/images/icon_pen.png" class="placeholder-icon"></image>
+            <text>{{hasSubmitted ? '已提交签名' : '点击此处签名'}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+  <!-- 提交按钮，对所有未提交用户可见 -->
+  <view hidden="{{!project}}">
+    <button class="submit-btn" bind:tap="handleSubmit" disabled="{{hasSubmitted || project.status === 'completed'}}">
+      {{hasSubmitted ? '我的评审已提交' : '提交我的评审'}}
+    </button>
+  </view>
+  
+
+  <!-- 创建者专属操作区 -->
+  <view hidden="{{!project}}">
+    <view wx:if="{{isCreator}}" class="creator-actions-card card">
+      <view class="card-title">创建者操作</view>
+      <button wx:if="{{project.status === 'pending'}}" class="action-btn end-project" bind:tap="handleEndProject">结束本项目评审</button>
+      <button class="action-btn share" open-type="share">分享邀请</button>
+      
+      <button class="action-btn export" bind:tap="exportResult">导出评审结果</button>
+    </view>
+  </view>
+</view>

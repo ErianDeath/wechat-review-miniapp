@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="index-container">
+  <image class="logo" src="/images/logo.svg" mode="aspectFit"></image>
+  <view class="title">科技创新成果评审系统</view>
+  <view class="subtitle">高效 · 透明 · 公正</view>
+
+  <view class="button-wrapper">
+    <button wx:if="{{!hasUserInfo}}" class="btn btn-primary" bind:tap="handleLogin">
+      微信授权登录
+    </button>
+  </view>
+  
+  <view wx:if="{{hasUserInfo}}" class="user-info-wrapper">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="nickname">欢迎您, {{userInfo.nickName}}</view>
+    <button class="btn btn-green" bind:tap="goToProjectList">开始评审</button>
+  </view>
+</view>

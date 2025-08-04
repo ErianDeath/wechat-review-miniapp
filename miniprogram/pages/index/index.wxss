@@ -1,0 +1,52 @@
+/* pages/index/index.wxss */
+.index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 80rpx;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1f2937; /* gray-800 */
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #6b7280; /* gray-500 */
+  margin-top: 16rpx;
+  margin-bottom: 120rpx;
+}
+
+.button-wrapper, .user-info-wrapper {
+  width: 100%;
+}
+
+.user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-bottom: 32rpx;
+}
+
+.nickname {
+  font-size: 36rpx;
+  color: #1f2937;
+  margin-bottom: 60rpx;
+}

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="header">
+    <view class="title">请在此处签名</view>
+    <view class="tip">完成签名后，请点击“确认签名”返回</view>
+  </view>
+  <canvas 
+    type="2d" 
+    id="signatureCanvas" 
+    class="signature-canvas" 
+    disable-scroll="true" 
+    bindtouchstart="handleTouchStart" 
+    bindtouchmove="handleTouchMove" 
+    bindtouchend="handleTouchEnd"
+  ></canvas>
+  <view class="button-group">
+    <button class="btn clear" bindtap="handleClear">清空重签</button>
+    <button class="btn submit" bindtap="handleSubmit">确认签名</button>
+  </view>
+</view>

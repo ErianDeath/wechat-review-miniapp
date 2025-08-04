@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="menu-card" bind:tap="goToProjectManager">
+        <view class="menu-title">项目管理</view>
+        <view class="menu-arrow">></view>
+    </view>
+    <view class="menu-card" bind:tap="goToTemplateManager">
+        <view class="menu-title">评分标准管理</view>
+        <view class="menu-arrow">></view>
+    </view>
+</view>

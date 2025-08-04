@@ -1,0 +1,111 @@
+.container { padding: 24rpx; background-color: #f3f4f6; }
+.card { background-color: #fff; border-radius: 24rpx; padding: 32rpx; margin-bottom: 24rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05); }
+.card-title { font-size: 32rpx; font-weight: 600; color: #1f2937; margin-bottom: 24rpx; padding-bottom: 24rpx; border-bottom: 1rpx solid #f3f4f6; }
+.project-title { font-size: 40rpx; font-weight: bold; margin-bottom: 16rpx; }
+.project-owner { font-size: 28rpx; color: #6b7280; margin-bottom: 24rpx; }
+.project-desc { font-size: 28rpx; color: #4b5563; line-height: 1.6; }
+
+.criterion-item { padding: 32rpx 0; border-bottom: 1rpx solid #f3f4f6; }
+.criterion-item:last-child { border-bottom: none; }
+.criterion-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16rpx; }
+.criterion-name { font-size: 30rpx; font-weight: 500; }
+.score-input-wrapper { display: flex; align-items: center; gap: 12rpx; }
+.score-input { width: 100rpx; height: 64rpx; text-align: center; font-size: 32rpx; font-weight: bold; color: #4f46e5; border: 2rpx solid #d1d5db; border-radius: 12rpx; }
+.max-score { font-size: 28rpx; color: #6b7280; }
+.criterion-desc { font-size: 26rpx; color: #6b7280; margin-bottom: 24rpx; }
+.score-slider { margin: 16rpx 0; }
+
+.form-group { margin-bottom: 40rpx; }
+.form-group:last-child { margin-bottom: 0; }
+.form-label { font-size: 30rpx; font-weight: 600; color: #374151; }
+.form-textarea { width: 100%; height: 180rpx; border: 2rpx solid #d1d5db; border-radius: 12rpx; padding: 24rpx; box-sizing: border-box; font-size: 28rpx; margin-top: 16rpx; }
+.signature-header { display: flex; justify-content: space-between; align-items: center; }
+.clear-btn { margin: 0; padding: 8rpx 24rpx; background-color: #e5e7eb; color: #374151; font-size: 24rpx; }
+.signature-canvas { width: 100%; height: 300rpx; border: 2rpx dashed #d1d5db; border-radius: 12rpx; background-color: #f9fafb; margin-top: 16rpx; }
+
+.submit-btn { background-color: #4f46e5; color: white; font-weight: bold; }
+.submit-btn[disabled] { background-color: #9ca3af; }
+
+.creator-actions-card { margin-top: 40rpx; }
+.action-btn { margin-top: 24rpx; }
+.action-btn.share { background-color: #10b981; color: white; }
+.action-btn.edit { background-color: #f59e0b; color: white; }
+.action-btn.export { background-color: #3b82f6; color: white; }
+.signature-display-area {
+  width: 100%;
+  height: 300rpx;
+  border: 2rpx dashed #d1d5db;
+  border-radius: 12rpx;
+  background-color: #f9fafb;
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #9ca3af;
+}
+.signature-image {
+  width: 100%;
+  height: 100%;
+}
+.placeholder-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 16rpx;
+  opacity: 0.5;
+}
+
+.participants-list { margin-top: 16rpx; }
+.participant-item { display: flex; align-items: center; padding: 16rpx 0; }
+.participant-item .avatar { width: 64rpx; height: 64rpx; border-radius: 50%; margin-right: 24rpx; }
+.participant-item .nickname { flex: 1; font-size: 28rpx; }
+.participant-name { flex: 1; font-size: 28rpx; } /* 关键改动：类名语义化 */
+
+
+.project-info-card { position: relative; padding-top: 80rpx; }
+.project-status-badge { position: absolute; top: 0; right: 32rpx; background-color: #4f46e5; color: white; padding: 8rpx 24rpx; border-radius: 0 0 16rpx 16rpx; font-size: 24rpx; }
+.project-status-badge.completed { background-color: #16a34a; }
+.creator-dashboard .card-title { border-bottom: none; margin-bottom: 0; }
+
+.action-btn.end-project { background-color: #dc2626; color: white; }
+
+/* 新增：平均分模块样式 */
+.average-total-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx;
+  background-color: #eef2ff;
+  border-radius: 16rpx;
+  margin-top: 16rpx;
+}
+.average-label {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.average-value {
+  font-size: 48rpx;
+  font-weight: 800;
+  color: #4f46e5;
+}
+.criteria-average-list {
+  margin-top: 24rpx;
+}
+.criterion-average-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 16rpx 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.criterion-average-item:last-child {
+  border-bottom: none;
+}
+.criterion-name {
+  color: #6b7280;
+}
+.criterion-average-value {
+  font-weight: bold;
+  color: #374151;
+}

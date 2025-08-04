@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="title">签名功能测试模块</view>
+  <canvas 
+    type="2d" 
+    id="signatureCanvas" 
+    class="signature-canvas" 
+    disable-scroll="true" 
+    bindtouchstart="handleTouchStart" 
+    bindtouchmove="handleTouchMove" 
+    bindtouchend="handleTouchEnd"
+  ></canvas>
+  <view class="button-group">
+    <button class="btn clear" bindtap="handleClear">清空</button>
+    <button class="btn undo" bindtap="handleUndo">撤销</button>
+    <button class="btn submit" bindtap="handleSubmit">提交</button>
+  </view>
+</view>
