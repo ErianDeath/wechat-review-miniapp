@@ -2,7 +2,7 @@ App({
   onLaunch: function () {
     // 初始化云开发环境必须在 onLaunch 中首先执行
     wx.cloud.init({
-      env: 'test-env-3gepwuu6afabf416', // !!! 请替换成你自己的环境ID
+      env: '',
       traceUser: true,
     });
     
